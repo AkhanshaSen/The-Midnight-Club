@@ -1,0 +1,54 @@
+.player {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.embedSlot {
+  position: relative;
+  min-height: 152px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #121212;
+}
+
+.embedSlot :global(iframe) {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  text-align: center;
+  color: rgba(243, 234, 220, 0.72);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.copy,
+.blocked {
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--ink-dim);
+}
+
+.blocked,
+.press {
+  color: var(--accent);
+}
+
+.link {
+  justify-self: start;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

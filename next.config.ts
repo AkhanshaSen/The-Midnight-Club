@@ -1,9 +1,18 @@
 import type { NextConfig } from "next";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  ...(basePath ? { basePath, assetPrefix: basePath } : {}),
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "i.scdn.co", pathname: "/image/**" },
+      { protocol: "https", hostname: "**.scdn.co", pathname: "/**" },
+      { protocol: "https", hostname: "**.spotifycdn.com", pathname: "/**" },
+    ],
+  },
 };
 
 export default nextConfig;

@@ -1,0 +1,110 @@
+.entrance {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px 48px;
+  background:
+    radial-gradient(40% 36% at 50% 58%, rgba(255, 177, 90, 0.16), transparent 70%),
+    #07060a;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+}
+
+.kicker {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--ink-dim);
+}
+
+.title {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(40px, 7vw, 72px);
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.door {
+  width: min(180px, 46vw);
+  aspect-ratio: 2 / 3.4;
+  border-radius: 90px 90px 8px 8px;
+  position: relative;
+  background:
+    linear-gradient(90deg, #2a211c 0%, #3c2d24 18%, #241c17 50%, #4a382c 82%, #1a1410 100%);
+  box-shadow:
+    0 0 0 8px #120e0c,
+    0 0 40px rgba(255, 177, 90, 0.35),
+    inset 0 0 24px rgba(0, 0, 0, 0.45);
+  animation: glow 3.6s ease-in-out infinite;
+}
+
+.panel {
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  border: 1px solid rgba(224, 181, 106, 0.35);
+  border-radius: 40px 40px 4px 4px;
+}
+
+.panelTop {
+  top: 12%;
+  height: 34%;
+}
+
+.panelBottom {
+  top: 52%;
+  height: 32%;
+  border-radius: 4px;
+}
+
+.handle {
+  position: absolute;
+  right: 18%;
+  top: 54%;
+  width: 8px;
+  height: 28px;
+  border-radius: 8px;
+  background: #e0b56a;
+  box-shadow: 0 0 8px rgba(224, 181, 106, 0.8);
+}
+
+.leak {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  height: 8px;
+  background: #ffb15a;
+  filter: blur(1px);
+  box-shadow: 0 10px 24px 6px rgba(255, 177, 90, 0.75);
+}
+
+.hint {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 8px #120e0c,
+      0 0 28px rgba(255, 177, 90, 0.28),
+      inset 0 0 24px rgba(0, 0, 0, 0.45);
+  }
+  50% {
+    box-shadow:
+      0 0 0 8px #120e0c,
+      0 0 56px rgba(255, 177, 90, 0.55),
+      inset 0 0 24px rgba(0, 0, 0, 0.45);
+  }
+}
